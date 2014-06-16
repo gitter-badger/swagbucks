@@ -17,7 +17,7 @@ with open(conf_file, u'r') as f:
     conf = json.load(f)
 
 c = requests.get(u'http://sbcodez.com/')
-code = c.text.partition(u'<span class="code">')[2].partition(u'</span>')[0]
+code = c.text.partition(u'<span class="code">')[2].partition(u'</span>')[0].strip()
 if code == conf.get(u'last_code'):
     log(u'I already submitted the code {}.'.format(code))
     sys.exit()
