@@ -18,7 +18,7 @@ def ping():
 	url = u'http://www.swagbucks.com/'
 	params = {u'cmd': u'sb-gimme-jx'}
 	data = {u'hdnCmd': u'sb-gimme', u'pcode': code}
-	for name, urql in app.config.get(u'URQM').iteritems():
+	for name, urqm in app.config.get(u'URQM').iteritems():
 		cookies = {u'__urqm': urqm}
 		r = requests.post(url, params=params, data=data, cookies=cookies)
 		app.logger.info(u'{}: {}: {}'.format(name, code, r.json()[0]))
