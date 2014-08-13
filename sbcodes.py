@@ -8,7 +8,8 @@ app.config.from_envvar(u'SETTINGS_FILE')
 def ping():
 	c = requests.get(u'http://sbcodez.com/')
 	_, _, code = c.text.partition(u'<span class="code">')
-	code, _, _ = code.partition(u'</span>').strip()
+	code, _, _ = code.partition(u'</span>')
+	code = code.strip()
 	if code == app.config.get(u'LAST_CODE'):
 		app.logger.debug(u'I already submitted the code {}.'.format(code))
 		return u''
