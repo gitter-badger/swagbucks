@@ -1,8 +1,5 @@
-import datetime
-import json
-import os
+import flask
 import requests
-import sys
 
 app = flask.Flask(__name__)
 app.config.from_envvar(u'SETTINGS_FILE')
