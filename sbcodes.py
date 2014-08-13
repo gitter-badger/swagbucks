@@ -23,3 +23,6 @@ def ping():
 		r = requests.post(url, params=params, data=data, cookies=cookies)
 		app.logger.info(u'{}: {}: {}'.format(name, code, r.json()[0]))
 	app.config[u'LAST_CODE'] = code
+
+if __name__ == u'__main__':
+    app.run(host=u'0.0.0.0', debug=True)
