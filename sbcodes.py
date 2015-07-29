@@ -16,7 +16,7 @@ def main():
     log('Starting up.')
     conf = {}
     home = pathlib.Path(os.environ.get('HOME')).resolve()
-    conf_file = home / '.config/sbcodes.json'
+    conf_file = home / '.config/swagbucks/sbcodes.json'
     if not conf_file.parent.exists():
         conf_file.parent.mkdir(parents=True)
     if conf_file.exists():
